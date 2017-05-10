@@ -1,5 +1,4 @@
 syntax on
-colorscheme antares
 let g:molokai_original = 1
 let g:rehsh256 = 1
 set background=dark
@@ -15,7 +14,10 @@ set showmatch
 set showmode
 set title
 set ruler
-set tabstop=4
+set tabstop=2
+set expandtab
+set shiftwidth=2
+set hlsearch
 
 
 let s:dein_dir = fnamemodify('~/.vim/bundle', ':p')
@@ -26,6 +28,8 @@ endif
 
 if dein#load_state('~/.vim/bundle')
   call dein#begin(s:dein_dir)
+  call dein#add('Haron-Prime/Antares')
+  call dein#add('tomasr/molokai')
   call dein#add('Shougo/neocomplete.vim')
   call dein#add('Shougo/unite.vim')
   call dein#add('Shougo/vimshell')
@@ -36,6 +40,8 @@ if dein#load_state('~/.vim/bundle')
   call dein#end()
   call dein#save_state()
 endif
+
+colorscheme antares
 
 filetype plugin indent on
 syntax enable
